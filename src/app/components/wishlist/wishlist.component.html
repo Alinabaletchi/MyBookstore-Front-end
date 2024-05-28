@@ -1,0 +1,121 @@
+
+<section style="background-color: #18917f;" *ngIf="wishlist">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <p><span class="h2">Shopping Cart </span><span class="h4">({{ wishlist.books.length + wishlist.games.length + wishlist.products.length }} items in your wishlist)</span></p>
+
+        <div class="card mb-4" *ngFor="let book of wishlist.books">
+          <div class="card-body p-4">
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <img [src]="book.image" class="img-fluid" alt="{{ book.name }}">
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Name</p>
+                  <p class="lead fw-normal mb-0">{{ book.name }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Description</p>
+                  <p class="lead fw-normal mb-0">{{ book.description }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Price</p>
+                  <p class="lead fw-normal mb-0">{{ book.price }} RON</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <button (click)="removeBookFromWishlist(book.id)" class="btn btn-danger">Remove from Wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4" *ngFor="let game of wishlist.games">
+          <div class="card-body p-4">
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <img [src]="game.image" class="img-fluid" alt="{{ game.name }}">
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Name</p>
+                  <p class="lead fw-normal mb-0">{{ game.name }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Description</p>
+                  <p class="lead fw-normal mb-0">{{ game.description }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Price</p>
+                  <p class="lead fw-normal mb-0">{{ game.price }} RON</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <button (click)="removeGameFromWishlist(game.id)" class="btn btn-danger">Remove from Wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card mb-4" *ngFor="let product of wishlist.products">
+          <div class="card-body p-4">
+            <div class="row align-items-center">
+              <div class="col-md-2">
+                <img [src]="product.image" class="img-fluid" alt="{{ product.name }}">
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Name</p>
+                  <p class="lead fw-normal mb-0">{{ product.name }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Description</p>
+                  <p class="lead fw-normal mb-0">{{ product.description }}</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <div>
+                  <p class="small text-muted mb-4 pb-2">Price</p>
+                  <p class="lead fw-normal mb-0">{{ product.price }} RON</p>
+                </div>
+              </div>
+              <div class="col-md-2 d-flex justify-content-center">
+                <button (click)="removeProductFromWishlist(product.id)" class="btn btn-danger">Remove from Wishlist</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex justify-content-end">
+          <button type="button" class="btn btn-light btn-lg me-2" [routerLink]="['/books']">Continue shopping</button>
+          <button type="button" class="btn btn-primary btn-lg">Checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div *ngIf="!wishlist">
+  <p>Your cart is empty.</p>
+</div>
+
+
+
+
+
+
+
+
+

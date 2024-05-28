@@ -1,0 +1,72 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <label for="gameTypeSelect">Select Game Type:</label>
+      <select id="gameTypeSelect" [(ngModel)]="selectedGameType" (change)="filterGamesByType()" class="form-control">
+        <option value="">All</option>
+        <option *ngFor="let type of gameTypeOptions" [value]="type">{{ type }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="games && games.length > 0">
+  <ul>
+    <li *ngFor="let game of games">
+<section style="background-color:  rgb(86, 137, 120);">
+  <div class="container py-5">
+    <div class="row justify-content-center mb-3">
+      <div class="col-md-12 col-xl-10">
+        <div class="card shadow-0 border rounded-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
+                <div class="bg-image hover-zoom ripple rounded ripple-surface">
+                  <img [src]="game.image || 'placeholder.jpg'" alt="{{ game.name }}"
+                    class=""  width="200"/>
+                  <a href="#!">
+                    <div class="hover-overlay">
+                      <div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-6 col-xl-6">
+                <div class="name">{{ game.name }}</div>
+                <div class="d-flex flex-row">
+                  <div class="text-danger mb-1 me-2">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <div class="quantity">Available quantity: {{ game.quantity }}</div>
+                </div>
+                <div class="mt-1 mb-0 text-muted small">
+                  <div class="description">{{ game.description }}</div>
+                  <p><strong>Game Type:</strong> {{ game.gameType }}</p>
+                </div>
+              
+              </div>
+              <div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none border-start">
+                <div class="d-flex flex-row align-items-center mb-1">
+                  
+                  <div class="price"> {{ game.price }} RON</div>
+                </div>
+                <h6 class="text-success">Free shipping</h6>
+                <div class="d-flex flex-column mt-4">
+                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-primary btn-sm" type="button"(click)="addToCart(game)">Add to Cart
+                    
+                  </button>
+                  <button data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-primary btn-sm mt-2" type="button" (click)="addToWislist(game)">
+                    Add to wishlist
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  

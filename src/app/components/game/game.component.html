@@ -1,0 +1,55 @@
+
+
+<div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Name of game:</label>
+    <div class="col-10">
+      <input class="form-control" type="text"[(ngModel)]="game.name" id="name" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-search-input" class="col-2 col-form-label">Price:</label>
+    <div class="col-10">
+      <input class="form-control" type="number" [(ngModel)]="game.price" id="price">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Quantity:</label>
+    <div class="col-10">
+      <input class="form-control" type="number" [(ngModel)]="game.quantity" id="quantity">
+    </div>
+    <div class="form-group row">
+      <label for="example-email-input" class="col-2 col-form-label">Image:</label>
+      <div class="col-10">
+        <input class="form-control" type="text" [(ngModel)]="game.image" id="quantity">
+      </div>
+  </div>
+  <div class="form-group row">
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" [(ngModel)]="game.description" rows="4" cols="50"></textarea>
+  </div>
+<div class="form-group row">
+    <label for="bookType">Select game type!</label>
+    <select class="form-control" id="gameType" [(ngModel)]="game.gameType">
+      <option *ngFor="let type of gameTypeOptions" [ngValue]="type">{{ type }}</option>
+    </select>
+  </div>
+  <div>
+    <br>
+    <button type="button" class="btn btn-outline-success" (click)="createGame()">Create game</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  

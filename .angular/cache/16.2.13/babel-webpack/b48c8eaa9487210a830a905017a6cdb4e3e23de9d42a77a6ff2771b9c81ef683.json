@@ -1,0 +1,1 @@
+{"ast":null,"code":"\"use strict\";\n\n[ngModel] = \"user.email\";","map":{"version":3,"names":["ngModel"],"sources":["C:\\Users\\Alina\\Desktop\\library\\src\\app\\components\\login\\login.component.ts"],"sourcesContent":["[(ngModel)]=\"user.email\""],"mappings":";;AAAA,CAAEA,OAAO,CAAE,GAAC,YAAY","ignoreList":[]},"metadata":{},"sourceType":"script","externalDependencies":[]}

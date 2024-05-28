@@ -1,0 +1,55 @@
+
+
+<div class="form-group row">
+    <label for="example-text-input" class="col-2 col-form-label">Name of Product:</label>
+    <div class="col-10">
+      <input class="form-control" type="text"[(ngModel)]="product.name" id="name" >
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-search-input" class="col-2 col-form-label">Price:</label>
+    <div class="col-10">
+      <input class="form-control" type="number" [(ngModel)]="product.price" id="price">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Quantity:</label>
+    <div class="col-10">
+      <input class="form-control" type="number" [(ngModel)]="product.quantity" id="quantity">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="description">Description:</label><br>
+    <textarea id="description" name="description" [(ngModel)]="product.description" rows="4" cols="50"></textarea>
+  </div>
+  <div class="form-group row">
+    <label for="example-email-input" class="col-2 col-form-label">Image:</label>
+    <div class="col-10">
+      <input class="form-control" type="text" [(ngModel)]="product.image" id="quantity">
+      <br>
+    </div>
+ 
+  <div>
+    <br>
+    <button type="button" class="btn btn-outline-success" (click)="createProduct()">Create Product</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  
+  
+  
